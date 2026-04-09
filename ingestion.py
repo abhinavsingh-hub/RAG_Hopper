@@ -1,5 +1,10 @@
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+
+def create_chunks(documents):
+    """Creating chunks from documents"""
+    
 
 def loading_documents(doc_path="docs"):
     """Loading documents here
@@ -40,9 +45,9 @@ def main():
     print("Ingestion Pipeline started...")
 
     #Loading Documents
-
+    documents = loading_documents()
     #Chunking
-
+    chunks = create_chunks(documents)
     #Embeddings
 
     #Store in vector DB
